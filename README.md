@@ -6,15 +6,6 @@
 
 Henry, Nick, Peter
 
-### ***Supervisor:***
-
-Dr. Changjiang ZHANG, Ms. Yiqi LIU
-
-Data Science
-
-Faculty of Science and Technology
-
-Beijing Normal University-Hong Kong Baptist University United International College
 
 # 1. Project Description
 
