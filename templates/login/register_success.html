@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    HDP | Register Success
+{% endblock %}
+{% block body %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href={% static 'css/signin.css' %} rel="stylesheet">
+    </head>
+    <body style="background-image: url({% static 'heart-1.jpg' %})">
+    <h1 class="text-center mt-5">Congratulations! <span style="color:#FF0000">{{ username }}</span> Register success
+    </h1><br><br>
+
+    <form class="text-center mt-4" method="post" action="/login">
+        <input type="submit" value="Please Login">
+    </form>
+    <br><br>
+    </body>
+    </html>
+
+{% endblock %}

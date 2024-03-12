@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block body %}
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Suggestions for Healthy Lifestyle</title>
+        <link rel="stylesheet" href={% static 'css/main.css'  %} >
+    </head>
+    <style>
+        button {
+            display: inline-flex;
+            height: 50px;
+            padding: 0;
+            background: #009578;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            overflow: hidden;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #008168;
+        }
+
+        button:active {
+            background: #006e58;
+        }
+
+        button__text,
+        button__icon {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 24px;
+            color: white;
+            height: 100%;
+        }
+
+        button__icon {
+            font-size: 1.5em;
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        img {
+            width: 10cm;
+            height: 5cm;
+        }
+
+        button {
+            width: auto;
+            height: auto;
+            float: right;
+        }
+    </style>
+    <body>
+    <div style="text-align: center;">
+        <img src={% static 'healthy.jpg' %}>
+    </div>
+    <h1 style="margin-left: 30px"><span style="font-size: xxx-large; ">Congratulations!<br/>
+            Few tips below may help you keep this healthy lifestyle!<br/></span></h1>
+    <span style="font-size: x-large; "><strong><em>-Healthy diet, which was calculated and rated based on the reported intake of healthy foods like vegetables,
+                        fruits, nuts, whole grains, healthy fats, and omega-3 fatty acids,
+                        and unhealthy foods like red and processed meats, sugar-sweetened beverages, trans fat, and sodium.<br/><br/>
+                    -Healthy physical activity level, which was measured as at least 30 minutes per day of
+                        moderate to vigorous activity daily.<br/><br/>
+                    -Healthy body weight, defined as a normal body mass index (BMI), which is between 18.5 and 24.9.<br/><br/>
+                    -Smoking, well, there is no healthy amount of smoking. "Healthy" here meant never having smoked.<br/><br/>
+                    -Moderate alcohol intake, which was measured as between 5 and 15 grams per day for women,
+                        and 5 to 30 grams per day for men. Generally, one drink contains about 14 grams of pure alcohol.
+                        That’s 12 ounces of regular beer, 5 ounces of wine, or 1.5 ounces of distilled spirits.</em></strong><br/><br/><br/>
+            </span>
+    <a href={% url 'healthy' %}>
+        <button type="button" class="button" style="bottom: 1px">
+            <span class="button__text">Top</span>
+            <span class="button__icon">
+                    <ion-icon name="chevron-up-circle-outline"></ion-icon>
+                </span>
+        </button>
+    </a>
+
+    <div><br/><br/><br/></div>
+
+    <a href={% url 'index' %}>
+        <button type="button" class="button" style="margin-bottom: 2%">
+            <span class="button__text">Homepage</span>
+            <span class="button__icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                </span>
+        </button>
+    </a>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+    </html>
+
+{% endblock %}

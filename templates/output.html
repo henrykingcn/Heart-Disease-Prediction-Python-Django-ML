@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Heart Disease Prediction
+{% endblock %}
+
+<!-- start  -->
+<!-- ____________________________________________________________________________________ -->
+
+
+
+{% block body %}
+    <h2 class='text-center mt-4'><strong> Machine Learning Weighted Predict Results:</strong> {{ data }}</h2><br>
+    <h4 class='text-center'> Logistic Regression Model (F1-Score: 90%, Accuracy: 82.97 %) :{{ lr }}</h4>
+    <h4 class='text-center'> Random Forest Model (F1-Score: 91%, Accuracy: 85.30 %) :{{ rf }}</h4>
+    <h4 class='text-center'> K-Nearest Neighbors Model (F1-Score: 84%, Accuracy: 86.23 %) :{{ knn }}</h4>
+    <h4 class='text-center'> Support Vector Machine Model (F1-Score: 88%, Accuracy: 82.03 %) :{{ svc }}</h4>
+    <h4 class='text-center'> Decision Tree Model (F1-Score: 77%, Accuracy: 77.45 %) :{{ dt }}</h4>
+    <h4 class='text-center'> Gradient Boosting Model (F1-Score=87%, Accuracy: 82.97 %) :{{ gb }}</h4>
+    <p class="text-center text-warning"> {{ q }}</p>
+    <form class="text-center" method="post" action="/healthy/">
+        <input type="submit" value="See more suggestions">
+    </form>
+
+{% endblock %}

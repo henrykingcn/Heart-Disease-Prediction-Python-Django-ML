@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    HDP | Login Success
+{% endblock %}
+{% block body %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Success</title>
+        <link href={% static 'css/signin.css' %} rel="stylesheet">
+    </head>
+    <body style="background-image: url({% static 'heart-1.jpg' %})">
+    <h1 class="text-center mt-5">Congratulations! <span style="color:#FF0000">{{ username }}</span> Login Success</h1>
+    <br>
+    <form class="text-center" method="post" action="/logout">
+        <input class='button' type="submit" value="Log-out">
+    </form>
+    <br><br>
+    </body>
+    </html>
+
+{% endblock %}

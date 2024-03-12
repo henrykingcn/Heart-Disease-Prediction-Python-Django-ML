@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    HDP | Patient Information
+{% endblock %}
+
+{% block body %}
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"
+              rel="stylesheet">
+        <link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+    </head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <body>
+
+    <h1 class="mt-3 text-center">Patient Information Database</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-14">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover" id="example">
+                        {#                        <table style="width:100%" class="mt-2">#}
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Sex</th>
+                            <th>Age</th>
+                            <th>CPT</th>
+                            <th>Resting_bp</th>
+                            <th>Cholesterol</th>
+                            <th>Fasting_bs</th>
+                            <th>Resting_ecg</th>
+                            <th>Max_heart_rate</th>
+                            <th>EIA</th>
+                            <th>ST_depression</th>
+                            <th>ST_slope</th>
+                            <th>NMV</th>
+                            <th>Thallium_test</th>
+                            <th>Target</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for i in data %}
+                            <tr>
+                                <td>{{ i.id }}</td>
+                                <td>{{ i.username }}</td>
+                                <td>{{ i.sex }}</td>
+                                <td>{{ i.age }}</td>
+                                <td>{{ i.cp }}</td>
+                                <td>{{ i.trestbps }}</td>
+                                <td>{{ i.chol }}</td>
+                                <td>{{ i.fbs }}</td>
+                                <td>{{ i.restecg }}</td>
+                                <td>{{ i.thalach }}</td>
+                                <td>{{ i.exang }}</td>
+                                <td>{{ i.oldpeak }}</td>
+                                <td>{{ i.slope }}</td>
+                                <td>{{ i.ca }}</td>
+                                <td>{{ i.thal }}</td>
+                                <td>{{ i.target }}</td>
+                                <td>
+                                    <button class="btn btn-danger btn-xs mt-1"
+                                            onclick="window.location.href='delete/{{ i.id }}';">
+                                        Delete
+                                    </button>
+
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+                    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+                    <script src={% static 'js/main.js' %}></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+    </html>
+
+{% endblock %}

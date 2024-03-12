@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{#set background with background.png#}
+{% block title %}
+    HDP | Login
+{% endblock %}
+{% block body %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+
+        <title>Signin Template for Bootstrap</title>
+
+        {#        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">#}
+
+        <!-- Bootstrap core CSS -->
+        {#        <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">#}
+
+        {#        <!-- Custom styles for this template -->#}
+        <link href={% static 'css/signin.css' %} rel="stylesheet">
+
+    </head>
+
+    <body style="background-image: url({% static 'backgroud.jpg' %});background-size:100% 200%;background-repeat:no-repeat;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 mt-5">
+
+                <h1 class="text-center"><i class="bi bi-person-bounding-box"></i> Sign In</h1>
+                <form class="text-center" method="post" action="/login_check">
+                    <strong>User Name</strong>:<input class="input" type="text" name="username"
+                                                      style="width: auto; margin-left: 10px"><br><br>
+                    <strong>Password:</strong><input class="input" type="password" name="password"
+                                                     style="width: auto; margin-left: 20px"><br><br>
+
+                    <input class='button' type="submit" value="Login">
+
+                </form>
+                <br>
+                <form class="text-center" method="POST" action="/register">
+                    <input class='button' style='vertical-align:middle' type="submit" value="Register">
+                </form>
+                <br><br>
+                <h3 class="text-center" style="color: palevioletred" >{{ msg }}</h3>
+            </div>
+        </div>
+    </div>
+    </body>
+    {#    <body class="text-center">#}
+    {#    <form class="form-signin">#}
+    {#        <h1 class="h3 mb-3 font-weight-normal mt-6">Please sign in</h1>#}
+    {#        <label for="inputEmail" class="sr-only">Email address</label>#}
+    {#        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>#}
+    {#        <label for="inputPassword" class="sr-only">Password</label>#}
+    {#        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>#}
+    {#        <div class="checkbox mb-3">#}
+    {#            <label>#}
+    {#                <input type="checkbox" value="remember-me"> Remember me#}
+    {#            </label>#}
+    {#        </div>#}
+    {#        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>#}
+    {#        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>#}
+    {#    </form>#}
+    {#    </body>#}
+    </html>
+{% endblock %}

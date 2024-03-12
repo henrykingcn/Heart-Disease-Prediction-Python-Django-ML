@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Treatment for Likely Heart Disease</title>
+        <link rel="stylesheet" href={% static 'css/main.css' %}>
+    </head>
+    <style>
+        button {
+            display: inline-flex;
+            height: 50px;
+            padding: 0;
+            background: #009578;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            overflow: hidden;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #008168;
+        }
+
+        button:active {
+            background: #006e58;
+        }
+
+        button__text,
+        button__icon {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 24px;
+            color: white;
+            height: 100%;
+        }
+
+        button__icon {
+            font-size: 1.5em;
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        img {
+            width: 15cm;
+            height: 10cm;
+        }
+
+        button {
+            width: auto;
+            height: auto;
+            float: right;
+        }
+    </style>
+    <body>
+    <div style="text-align: center;"><img src={% static 'treatments.jpg' %} alt="treatments"></div>
+    <h1 class="text-center" style="margin-left: 30px">We strongly suggest you take professional medical test<br>
+        <span style="color:red;font-size: xxx-large;" >IMMEDIATELY!</span><br>
+            Few possible treatments are shown as below.<br/></h1>
+    <span style="font-size: x-large; "><strong><em>-Medications.
+                    If lifestyle changes alone don't work, medications may be needed to control heart disease symptoms and to prevent complications.
+                    The type of medication used depends on the type of heart disease.<br/><br/>
+                    -Surgery or other procedures. Some people with heart disease may need a procedure or surgery.
+                    The type of procedure or surgery will depend on the type of heart disease and the amount of damage to the heart.<br/><br/>
+                    -Changing your lifestyle: This could consist of cutting saturated fats from your diet,
+                    stopping the use of tobacco products or starting a walking program.</em></strong><br/><br/><br/>
+            </span>
+
+    <a href="{% url 'unhealthy' %}">
+        <button type="button" class="button" style="bottom: 1px">
+            <span class="button__text">Top</span>
+            <span class="button__icon">
+                    <ion-icon name="chevron-up-circle-outline"></ion-icon>
+                </span>
+        </button>
+    </a>
+
+    <div><br/><br/><br/></div>
+
+    <a href="{% url 'index' %}">
+        <button type="button" class="button" style="margin-bottom: 2%">
+            <span class="button__text">Homepage</span>
+            <span class="button__icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                </span>
+        </button>
+    </a>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+    </html>
+{% endblock %}

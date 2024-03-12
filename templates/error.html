@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+HDP | Error Page
+{% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+
+<h1 class="mt-5 text-center">User <span style="color:#FF0000">{{ username }}</span> is NOT A DOCTOR</h1>
+<h1 class="text-center">Only DOCTOR can access the databases</h1>
+
+</body>
+</html>
+{% endblock %}

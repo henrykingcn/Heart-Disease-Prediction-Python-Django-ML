@@ -1,0 +1,82 @@
+{% load static %}
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}"><i class="bi bi-heart-pulse-fill"></i> Heart Disease Prediction</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><i
+                            class="bi bi-house-door"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'know_more' %}"><i class="bi bi-info-circle-fill"></i> About
+                        HDP</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'winepredict' %}"><i class="bi bi-clipboard-data-fill"></i> Heart
+                        Disease Prediction</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'databases' %}"><i class="bi bi-clipboard-data-fill"></i> HDP
+                        Databases</a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-calendar-check"></i> Reports
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'data_proc_report' %}">Data Processing Report</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'age' %}">Data Visualization Report</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'report' %}">Machine Learning Report</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-fill"></i> Account
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login <i class="bi bi-box-arrow-right"></i></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">Register <i
+                                    class="bi bi-person-add"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout <i
+                                    class="bi bi-box-arrow-left"></i></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}"><i class="bi bi-clipboard2"></i> About</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

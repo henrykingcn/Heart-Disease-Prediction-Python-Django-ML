@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="row">
+  <div class="col-3" >
+    <div class="row " style="margin-left: 20%; width: 200px;">
+      <ul class="list-group">
+       <li class="list-group-item" >
+           <a href="age"> Age Exploration </a>
+       </li>
+       <li class="list-group-item">
+           <a href="gender"> Gender Exploration </a>
+       </li>
+          <li class="list-group-item">
+           <a href="chest"> Chest Pain Exploration </a>
+          </li>
+          <li class="list-group-item">
+           <a href="blood"> Blood Pressure Exploration </a>
+          </li>
+            <li class="list-group-item">
+           <a href="cholestoral"> Cholestoral Exploration </a>
+            </li>
+          <li class="list-group-item">
+           <a href="fasting"> Fasting Blood Sugar  Exploration </a>
+          </li>
+          <li class="list-group-item">
+           <a href="electrocardiographic"> Electrocardiographic Results Exploration </a>
+          </li>
+          <li class="list-group-item">
+           <a href="heartRate"> Maximum Heart Rate Exploration </a>
+          </li>
+          <li class="list-group-item">
+           <a href="exercise"> Exercise Induced Angina Exploration </a>
+          </li>
+          <li class="list-group-item">
+           <a href="st"> ST depression Exploration </a>
+          </li>
+          <li class="list-group-item active">Major Vessels Exploration</li>
+          <li class="list-group-item">
+           <a href="thalassemia"> Thalassemia Exploration </a>
+          </li>
+      </ul>
+    </div>
+  </div><!-- /.col-lg-6 -->
+  <div class="col-9">
+    {% load static %}
+      <div class = 'explorimg'>
+          <ul>
+            <img class="explorimg" src="{% static 'exploration/img/vessels/vessels1.png' %}">
+        </ul>
+          <ul>
+            <img class="explorimg" src="{% static 'exploration/img/vessels/vessels2.png' %}">
+        </ul>
+      </div>
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+    <style>
+        .explorimg {
+            height: 350px;
+            width: 500px;
+        {#display:flex;#}{#justify-content:center;#} margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+{% endblock %}

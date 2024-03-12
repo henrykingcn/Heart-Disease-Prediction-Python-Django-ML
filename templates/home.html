@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %}
+    HDP | About HDP
+{% endblock %}
+{% load static %}
+{% block body %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>About Heart Disease</title>
+        <style>
+            img {
+                width: 3cm;
+                height: 6cm;
+
+            }
+
+        </style>
+    </head>
+    <body>
+    <h1 class="text-center mt-5" style="margin-left: 30px;"><span style="font-size: xxx-large; ">Heart Disease<br/>
+        Here are something you need to know about!<br/></span></h1>
+    <img src={% static 'heart_disease.png' %} alt = "description about heart disease">
+
+    <h2 class="text-center"><span  style="font-size: xx-large; "><br/>What is Heart Disease?</span></h2>
+    <span style="font-size: x-large; ">
+            The term “heart disease” refers to several types of heart conditions.
+            The most common type of heart disease in the United States is coronary artery disease (CAD),
+            which affects the blood flow to the heart. Decreased blood flow can cause a heart attack.
+        </span>
+
+    <h2 class="text-center"><span style="font-size: xx-large; ">What are the symptoms of heart disease?</span></h2>
+    <span style="font-size: x-large; ">
+            Sometimes heart disease may be “silent” and not diagnosed until a person experiences signs
+            or symptoms of a heart attack, heart failure, or an arrhythmia. When these events happen,
+            symptoms may include:<br/>
+        </span>
+    <span  style="font-size: x-large; ">
+            <strong><em>-Heart attack</em></strong>: Chest pain or discomfort, upper back or neck pain, indigestion,
+                  heartburn, nausea or vomiting, extreme fatigue, upper body discomfort, dizziness, and shortness of breath.<br/>
+        </span>
+    <span style="font-size: x-large; ">
+            <strong><em>-Arrhythmia</em></strong>: Fluttering feelings in the chest (palpitations).<br/>
+        </span>
+    <span style="font-size: x-large; ">
+            <strong><em>-Heart failure</em></strong>: Shortness of breath, fatigue, or swelling of the feet, ankles,
+                  legs, or neck veins.<br/>
+        </span>
+    <br/><br/>
+    <h2 class="text-center" style="margin-left: 20px"><span
+            style="font-size: xx-large; ">What are the risk factors for heart disease?</span>
+    </h2>
+    <image src="{% static "RiskFactors.png" %}"></image>
+    <p style="margin-left: 20px">
+            <span style="font-size: x-large;color: black ">
+            High blood pressure, high blood cholesterol, and smoking are key risk factors for heart disease.
+            About half of people in the United States (47%) have at least one of these three risk factors.
+            Several other medical conditions and lifestyle choices can also put people at a higher risk for heart disease,
+            including:<br/><br/>
+            </span>
+        <span style="font-size: x-large; color: black">
+            <strong><em>-Hypertension<br/><br/>
+                        -Diabetes<br/><br/>
+                        -Chronic Kidney Disease<br/><br/>
+                        -Obesity<br/><br/>
+                        -Abnormal Blood Lipids</em></strong><br/><br/><br/>
+            </span>
+    </p>
+
+
+    <h2 class="text-center" style="margin-left: 20px"><span style="font-size: xx-large; ">Any strategies to prevent heart disease?</span>
+    </h2>
+    <image src={% static "prevention.png" %}></image>
+    <p style="margin-left: 20px">
+            <span style="font-size: x-large; color: black">
+                These eight key factors can help you lower your risk of heart attack and stroke if you’ve never had one.
+                They’re part of an overall healthy lifestyle for adults.<br/><br/>
+            <strong><em>-Healthy Diet<br/><br/>
+                        -Weight Control<br/><br/>
+                        -Physical Activity<br/><br/>
+                        -Blood Sugar Control<br/><br/>
+                        -Blood Pressure Control<br/><br/>
+                        -No Smoking<br/><br/>
+                        -Positive Thoughts<br/><br/>
+                        -No Alcohol</em></strong>
+            </span>
+    </p>
+    <a href={% url 'index' %}>
+        <button type="button" class="button" style="margin-bottom: 2%">
+            <span class="button__text">Homepage</span>
+            <span class="button__icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                </span>
+        </button>
+    </a>
+    </body>
+    </html>
+{% endblock %}

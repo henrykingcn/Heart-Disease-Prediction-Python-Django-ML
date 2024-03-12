@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Heart Disease Prediction
+{% endblock %}
+
+<!-- Form start  -->
+<!-- ____________________________________________________________________________________ -->
+
+{% block body %}
+    <style>
+        .form-control:hover {
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        {#font-size: 20px;#} border-radius: 5px;
+            background-color: white;
+            color: black;
+            border: 1px solid gray;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .form-select:hover {
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            border: 1px solid gray;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        }
+
+        .btn:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            background-color: palevioletred; /* Green */
+            color: white;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        @keyframes caret {
+            50% {
+                border-right-color: #000;
+            }
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            color: #000000;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 5s steps(15),
+            caret .5s steps(1) 10;
+            border-right: 1px solid transparent;
+        }
+    </style>
+    <body style="background-image: url({% static 'vertical.jpg' %});background-size:100% 200%;background-repeat:no-repeat;">
+    <h1 class="text-center mt-4">Heart Disease Prediction</h1>
+    <div class="container">
+        <div class="row  justify-content-center">
+
+
+            {#                set all in middle#}
+            <div class="col-md-5 mt-5">
+
+
+                <form method="Post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Age</label>
+                        <input type="text" class="form-control" name="age" id="exampleInputEmail1"
+                               aria-describedby="emailHelp" required>
+
+                    </div>
+
+
+                    <label class="form-label">Gender</label>
+                    <select class="form-select" aria-label="Default select example" name="gender">
+                        <option selected>Gender</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                        <br/>
+                    </select>
+
+                    <br/>
+                    <label class="form-label">Chest Pain Type</label>
+                    <select class="form-select" aria-label="Default select example" name="cp">
+                        <option selected value="0">Typical Angina: 0</option>
+                        <option value="1">Atypical Angina: 1</option>
+                        <option value="2">Non Anginal Pain: 2</option>
+                        <option value="3">Asymptotic: 3</option>
+                    </select><br>
+
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Resting Blood Pressure</label>
+                        <input type="text" class="form-control" name="rbp" id="exampleInputPassword1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Serum Cholestrol</label>
+                        <input type="text" class="form-control" name="chol" id="exampleInputPassword1" required>
+                    </div>
+
+
+                    <label class="form-label">Fasting blood sugar > 120 mg/dl</label>
+                    <select class="form-select" aria-label="Default select example" name="fbs">
+                        <option selected value="0">No: 0</option>
+                        <option value="1">Yes: 1</option>
+
+
+                    </select><br>
+
+                    <label class="form-label">Resting ECG</label>
+                    <select class="form-select" aria-label="Default select example" name="rest">
+                        <option selected value="0">Normal: 0</option>
+                        <option value="1">Having ST-T wave abnormality: 1</option>
+                        <option value="2">Left ventricular hyperthrophy: 2</option>
+
+                    </select><br>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Max heart rate achieved</label>
+                        <input type="text" class="form-control" name="mhr" id="exampleInputPassword1" required>
+                    </div>
+
+                    <label class="form-label">Exercise Induced Angina</label>
+                    <select class="form-select" aria-label="Default select example" name="eia">
+                        <option selected value="0">No: 0</option>
+                        <option value="1">Yes: 1</option>
+
+
+                    </select><br>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">ST Depression Induced By Exercise Relative
+                            To
+                            Rest:</label>
+                        <input type="text" class="form-control" name="st" id="exampleInputPassword1" required>
+                    </div>
+                    <label class="form-label">Slope Of The Peak Exercise ST Segment</label>
+                    <select class="form-select" aria-label="Default select example" name="slope">
+
+                        <option selected value="0">Up-sloping: better heart rate with exercise (uncommon): 0</option>
+                        <option value="1">Flat: minimal change (typical healthy heart): 1</option>
+                        <option value="2">Down-sloping: signs of unhealthy heart: 2</option>
+
+
+                    </select><br>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Number Of Major Vessels (0–3) Colored By
+                            Flourosopy</label>
+                        <input type="text" class="form-control" name="major" id="exampleInputPassword1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Displays The Thalassemia</label>
+                        <input type="text" class="form-control" name="thala" id="exampleInputPassword1" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-danger">Predict</button>
+
+                    <br><br>
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    </body>
+
+{% endblock %}
+
+<!-- ______________________________________________________________________ -->
